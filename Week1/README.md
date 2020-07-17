@@ -132,6 +132,7 @@ kernel = 1/9*np.float32([[1,1,1],[1,1,1],[1,1,1]])
 
 # What happens during the training of a DNN?
 During the training of DNN in each layer we are learning the features from image and marching towards the building the conclusion of learning
+![](DNN_explain.PNG)
 
 At the initial local receptive fields we learn about edges and gradients, down the line we learn about textures and patterns, and then we learn 
 about parts of an object and at the end we will have overall receptive field view and all the information at that layer would have covered and 
