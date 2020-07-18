@@ -1,11 +1,11 @@
 # What are Channels and Kernels (according to EVA)?
-Channel is a set which contains all the variations of a single feature at one space. For example, if we consider an alphabet and consider ‘M’ as channel, this channel contains all the variations we can consider as a feature like font size, font style, font colour of ‘M’ alphabet but this channel only belongs to one alphabet that is ‘M’. similarly, if we consider RED colour as a channel, it contains all shades of RED colour like dark red, light red etc. so channel is collection of variations of a single feature.
-Kernels are feature extractors or filters or 3*3 (most of the time) randomly initialized matrix, which can be used for convolution with input image/intermediate input to extract the features from image.
+* Channel is a set which contains all the variations of a single feature at one space. For example, if we consider an alphabets and consider ‘M’ as channel, this channel contains all the variations we can consider as a feature like font size, font style, font colour of ‘M’ alphabet but this channel only belongs to one alphabet that is ‘M’. similarly, if we consider RED colour as a channel, it contains all shades of RED colour like dark red, light red etc. so channel is collection of variations of a single feature.
+* Kernels are feature extractors or filters or 3*3 (most of the time) randomly initialized matrix, which can be used for convolution with input image/intermediate input to extract the features from image.
 
 ![](channel.PNG)
 
 # Why should we (nearly) always use 3x3 kernels?
-3*3 is an ideal kernel because this kernel is not too larger filter size to ignore the learning of very minute information in a Local receptive field and Not too small filter size which will be heavy in computation power.
+* 3x3 is an ideal kernel because this kernel is not too larger filter size to ignore the learning of very minute information in a Local receptive field and Not too small filter size which will be heavy in computation power.
 Feature extracted from 3*3 filter will be highly local and helps to gather smaller and complex features in an image.
 
 # How many times to we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)
