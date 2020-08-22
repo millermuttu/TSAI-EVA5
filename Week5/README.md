@@ -33,10 +33,10 @@ try to use Regulearization methods like batch norm and dropouts
 
 # [Iteration 3](https://github.com/millermuttu/TSAI-EVA5/blob/master/Week5/EVA5_S5_F3.ipynb)
 
-##Target:
+## Target:
 * added Some of the augmentation techniques like rotate, colorjitter to change brightness, contrast, and hue
 
-##Result:
+## Result:
 * parameter: 11k
 * Best training acc: 99.08
 * Best testing acc: 99.50
@@ -47,7 +47,7 @@ try to use Regulearization methods like batch norm and dropouts
 
 # [Iteration 4](https://github.com/millermuttu/TSAI-EVA5/blob/master/Week5/EVA5_S5_F4.ipynb)
 
-##Target:
+## Target:
 * Reduce the number of parameters between 8k to 10k
 * Use sheduler to decrese the learning late by 0.1 factor after every 6 epochs, startig learning rate being 0.1
 
