@@ -7,6 +7,7 @@ def train(model, device, train_loader, optimizer, epoch, reg, lambda1, lambda2, 
     pbar = tqdm(train_loader)
     correct = 0
     processed = 0
+    criterion = torch.nn.CrossEntropyLoss()
     for batch_idx, (data, target) in enumerate(pbar):
         # get samples
         data, target = data.to(device), target.to(device)
