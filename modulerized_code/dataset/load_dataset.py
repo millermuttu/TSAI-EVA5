@@ -2,8 +2,8 @@ import torch
 import torchvision
 # from torchvision import datasets, transforms
 
-def load_dataset(dataset_name, transform, batch_size=128, num_workers=2):
-    if dataset_name is 'CIFAR10':
+def load_dataset_fn(dataset_name, transform, batch_size=128, num_workers=2):
+    if dataset_name == 'CIFAR10':
         trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
                                                 download=True, transform=transform)
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
@@ -15,7 +15,7 @@ def load_dataset(dataset_name, transform, batch_size=128, num_workers=2):
                                                  shuffle=False, num_workers=num_workers)
         return trainset,trainloader,testset,testloader
 
-    elif dataset_name is 'MNIST':
+    elif dataset_name == 'MNIST':
         trainset = torchvision.datasets.MNIST(root='./data', train=True,
                                                 download=True, transform=transform)
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
