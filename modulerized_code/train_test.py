@@ -82,6 +82,7 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
     test_loss = 0
     correct = 0
     num_misclassified = 0
+    criterion1 = torch.nn.CrossEntropyLoss(reduction='sum')
     with torch.no_grad():
         for data, target in test_loader:
             # if misclassified:
@@ -89,7 +90,8 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
             #   batch_target = target
             data, target = data.to(device), target.to(device)
             output = model(data)
-            test_loss += nn.CrossEntropyLoss(output, target, reduction='sum').item()  # sum up batch loss
+            loss = criterion1(output, target)
+            test_loss += loss.item()  # sum up batch loss
             pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
             correct += pred.eq(target.view_as(pred)).sum().item()
             if misclassified:
@@ -111,3 +113,4 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
         100. * correct / len(test_loader.dataset)))
 
     test_acc.append(100. * correct / len(test_loader.dataset))
+
