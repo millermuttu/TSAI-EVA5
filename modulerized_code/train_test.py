@@ -24,25 +24,25 @@ def train(model, device, train_loader, optimizer, epoch, reg, lambda1, lambda2, 
         regularization_loss1 = 0
         regularization_loss2 = 0
         if (reg == 'None'):  # No Regularization
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             train_losses.append(loss)
 
         elif (reg == 'L1'):  # Loss with L1
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             for param in model.parameters():
                 regularization_loss1 += torch.norm(param, 1)
             loss += (lambda1 * regularization_loss1)
             train_losses.append(loss)
 
         elif (reg == 'L2'):  # Loss with L2
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             for param in model.parameters():
                 regularization_loss2 += torch.norm(param, 2)
             loss += (lambda2 * regularization_loss2)
             train_losses.append(loss)
 
         elif (reg == 'L1L2'):  # Loss with L1 and L2
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             for param in model.parameters():
                 regularization_loss1 += torch.norm(param, 1)
                 regularization_loss2 += torch.norm(param, 2)
@@ -50,11 +50,11 @@ def train(model, device, train_loader, optimizer, epoch, reg, lambda1, lambda2, 
             train_losses.append(loss)
 
         elif (reg == 'GBN'):  # Loss with GBN
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             train_losses.append(loss)
 
         else:  # Loss with GBN, L1 and L2
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             for param in model.parameters():
                 regularization_loss1 += torch.norm(param, 1)
                 regularization_loss2 += torch.norm(param, 2)
@@ -81,6 +81,7 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
     test_loss = 0
     correct = 0
     num_misclassified = 0
+    criterion = torch.nn.CrossEntropyLoss()
     with torch.no_grad():
         for data, target in test_loader:
             # if misclassified:
@@ -88,7 +89,7 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
             #   batch_target = target
             data, target = data.to(device), target.to(device)
             output = model(data)
-            test_loss += F.nll_loss(output, target, reduction='sum').item()  # sum up batch loss
+            test_loss += criterion(output, target, reduction='sum').item()  # sum up batch loss
             pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
             correct += pred.eq(target.view_as(pred)).sum().item()
             if misclassified:
