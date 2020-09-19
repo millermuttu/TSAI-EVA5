@@ -1,6 +1,6 @@
 # Session 8 - Receptive field and network architecture
 
-[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://nbviewer.jupyter.org/github/millermuttu/TSAI-EVA5/blob/master/week8/EVA5_session_8.ipynb)
+[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week8/EVA5_session_8.ipynb)
 
 ## Assignment Objective
 
