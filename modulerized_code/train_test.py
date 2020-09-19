@@ -1,5 +1,6 @@
 from tqdm import tqdm
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 
 def train(model, device, train_loader, optimizer, epoch, reg, lambda1, lambda2, train_losses, train_acc):
@@ -81,7 +82,6 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
     test_loss = 0
     correct = 0
     num_misclassified = 0
-    criterion = torch.nn.CrossEntropyLoss()
     with torch.no_grad():
         for data, target in test_loader:
             # if misclassified:
@@ -89,7 +89,7 @@ def test(model, device, test_loader, test_losses, test_acc, misclassified_images
             #   batch_target = target
             data, target = data.to(device), target.to(device)
             output = model(data)
-            test_loss += criterion(output, target, reduction='sum').item()  # sum up batch loss
+            test_loss += nn.CrossEntropyLoss(output, target, reduction='sum').item()  # sum up batch loss
             pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
             correct += pred.eq(target.view_as(pred)).sum().item()
             if misclassified:
