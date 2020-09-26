@@ -5,3 +5,4 @@
 
 from .networks import *
 from .resnet import *
+from .quiz_dnn import *
