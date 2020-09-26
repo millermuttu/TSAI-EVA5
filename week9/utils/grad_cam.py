@@ -143,10 +143,10 @@ def draw_gad_cam(model, device, dataloader):
         f, axarr = plt.subplots(nrows=1, ncols=2)
         plt.sca(axarr[0]);
         plt.imshow(heatmap.squeeze());
-        plt.title('image')
+        plt.title('grad_cam')
         plt.sca(axarr[1]);
         plt.imshow(np.transpose(npimg, (1, 2, 0)))
         # plt.imshow(img);
-        plt.title('grad_cam')
+        plt.title('image')
         plt.show()
 
