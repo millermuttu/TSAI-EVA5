@@ -119,7 +119,7 @@ def draw_gad_cam(model, device, dataloader):
 
         with GradCam(model, [model.layer4]) as gcam:
             out_b = gcam(inp_b)  # [N, C]
-            out_b[:, labels[0]].backward()
+            out_b[:, lbl].backward()
 
             gcam_b = gcam.get(model.layer4)  # [N, 1, fmpH, fmpW]
             gcam_b = F.interpolate(gcam_b, [32, 32], mode='bilinear', align_corners=False)  # [N, 1, inpH, inpW]
@@ -128,7 +128,7 @@ def draw_gad_cam(model, device, dataloader):
         with GuidedBackPropogation(model) as gdbp:
             inp_b = inp_b.requires_grad_()  # Enable recording inp_b's gradient
             out_b = gdbp(inp_b)
-            out_b[:, labels[0]].backward()
+            out_b[:, lbl].backward()
 
             grad_b = gdbp.get(inp_b)  # [N, 3, inpH, inpW]
             grad_b = grad_b.mean(dim=1, keepdim=True)  # [N, 1, inpH, inpW]
