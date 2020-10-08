@@ -243,5 +243,7 @@ class GradCAMView:
         self.img_type = image_type
         if self.img_type == 'normal':
             self.plot_batch(plot_path,plot_size)
+        elif self.img_type == 'original':
+            self.plot(plot_path)
         else:
             self.plot_batch_incorrect(plot_path,plot_size)

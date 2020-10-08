@@ -51,7 +51,7 @@ def data_loader(data, batch_size, num_workers, cuda, shuffle):
     return DataLoader(data, **loader_args)
 
 
-def pytorch_datasets(train, download=True, transforms=None, augmentations=None, dataset_name="data"):
+def pytorch_datasets(train=True, download=True, transforms=None, augmentations=None, dataset_name="data"):
     """
     Returns a dataset from torchvision library.
     Downloads the dataset in the folder sapecified by dataset_name variable

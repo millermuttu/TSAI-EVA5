@@ -1,11 +1,4 @@
-import torch
-from utils.config import *
 import numpy as np
-import torch.optim as optim
-from torch.optim.lr_scheduler import StepLR
-from torchsummary import summary
-import torch.nn as nn
-from torchvision import transforms
 import matplotlib.pyplot as plt
 
 
@@ -40,7 +33,7 @@ def show_batch(dataloader):
     class_idx = dataloader.dataset.class_to_idx
     idx_class = idx_to_class(class_idx)
     n_rows = n_cols = int(np.sqrt(len(batch_imgs)))
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(15, 15))
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(10, 10))
     if batch_imgs.shape[1] == 1:
         cmap = 'gray'
     else:

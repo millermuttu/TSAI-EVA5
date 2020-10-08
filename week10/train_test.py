@@ -65,3 +65,4 @@ def test(model, dataloader, loss_fn, device, n_misclassified, test_losses, test_
         f'\nValidation set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(dataloader.dataset)} ({test_accuracy[-1]:.2f}%)\n'
     )
 
+    return test_loss
