@@ -1,19 +1,15 @@
 # Session 8 - Receptive field and network architecture
 
-[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week8/EVA5_session_9.ipynb)
+[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week8/EVA5_session_8.ipynb)
 
 ## Assignment Objective
 
-Implement the transformation using albumentation package, and make a separate transformation for train and test set
-  * train set - ToTensor, HorizontalFlip, Normalize, etc
-  * Test set - ToTensor and Normalize
-
-Implement Gradcam for visualization of focus of our trained network.
+Use the Resnet18 architecture and run the modulerized code to get a testing accuracy of >85% with any numbers of epochs
   
   
 ## Solution:
 
-Implemented both albumentation and gradcam feature.
+* used the ResNet18 model architecture and achieved the accuracy of >85%  
 
 ## Model Hyperparameters
 
@@ -26,4 +22,4 @@ Implemented both albumentation and gradcam feature.
 
 ## Results
 
- * Achived grater than 87% validation
+ * Achived grater than 85% validation accurcy at epochs 12 and onwards
