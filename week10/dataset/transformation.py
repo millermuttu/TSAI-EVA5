@@ -23,7 +23,7 @@ def transformations(transformations=None, augmentations=None):
         transforms_list = transformations + default_transforms_list
 
     if augmentations is not None:
-        transforms_list = augmentations + default_transforms_list
+        transforms_list = augmentations
 
     return transforms.Compose(transforms_list)
 
@@ -47,6 +47,6 @@ def transforma_albumentation(transformations=None, augmentations=None):
             transforms_list = transformations + default_transforms_list
 
         if augmentations is not None:
-            transforms_list = augmentations + default_transforms_list
+            transforms_list = augmentations
 
         return A.Compose(transforms_list)
