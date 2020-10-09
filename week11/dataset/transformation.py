@@ -1,7 +1,8 @@
 from torchvision import transforms
 import albumentations as A
-from albumentations.pytorch import ToTensor
+from albumentations.pytorch import ToTensorV2
 import numpy as np
+
 
 def transformations(transformations=None, augmentations=None):
     """Create data transformations
@@ -39,7 +40,7 @@ def transforma_albumentation(transformations=None, augmentations=None):
         transforms_list = []
         default_transforms_list = [
             # convert the data to torch.FloatTensor with values within the range [0.0 ,1.0]
-            ToTensor()
+            ToTensorV2()
         ]
 
         if transformations is not None:
