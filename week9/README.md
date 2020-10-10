@@ -1,5 +1,5 @@
 # Session 9 - Data Agumentation
-[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week8/EVA5_session_9.ipynb)
+[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week9/EVA5_session_9.ipynb)
 
 ## Assignment Objective
 
