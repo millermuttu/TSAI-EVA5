@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
 
 def idx_to_class(class_to_idx):
     return {v: k for k, v in list(class_to_idx.items())}
@@ -74,3 +76,27 @@ def plot_metrics(metric_list, plot_type="Loss"):
     ax.set_xlabel('Number of Epochs', fontsize=10)
     ax.legend()
     fig.tight_layout()
+
+def plot_clr(num_cycles,step_size,lr_max,lr_min):
+    total_iters = step_size * 2 * num_cycles
+    x = np.linspace(0, total_iters, 1000);
+    def get_lr(iter):
+      cycle = np.floor(1 + iter / (2 * step_size))
+      x = np.abs( iter/step_size - 2 * cycle + 1 )
+      lr_t = lr_min + (lr_max - lr_min) * (1 - x)
+      return lr_t
+    y = np.array([get_lr(iter) for iter in x])
+    plt.style.use('dark_background')
+    plt.figure(figsize=(12,6))
+    plt.plot(x, y)
+    plt.title('Cyclic_lr')
+    plt.xlabel('steps')
+    plt.ylabel('learning rate')
+    # Plot max lr line
+    plt.axhline(lr_max, label='max_lr', color='y')
+    plt.text(0, lr_max + lr_max / 100, 'max_lr',bbox=dict(facecolor='blue', alpha=0.5))
+    # Plot min lr line
+    plt.axhline(lr_min, label='min_lr', color='g')
+    plt.text(0, lr_min - lr_max/100, 'min_lr',bbox=dict(facecolor='blue', alpha=0.5))
+    plt.grid(False)
+    plt.show()
