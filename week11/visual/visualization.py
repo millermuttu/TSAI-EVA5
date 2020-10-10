@@ -78,6 +78,7 @@ def plot_metrics(metric_list, plot_type="Loss"):
     fig.tight_layout()
 
 def plot_clr(num_cycles,step_size,lr_max,lr_min):
+    """ Show the plot for Cyclic LR"""
     total_iters = step_size * 2 * num_cycles
     x = np.linspace(0, total_iters, 1000);
     def get_lr(iter):

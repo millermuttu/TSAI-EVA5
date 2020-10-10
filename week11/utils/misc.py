@@ -7,6 +7,7 @@ import torch.nn as nn
 
 
 def get_model_summary(model, input_size):
+    """ Print the model summary """
     print(summary(model, input_size))
 
 
@@ -19,13 +20,38 @@ def nll_loss():
 
 
 def sgd_optimizer(model, lr=LEARNING_RATE, momentum=MOMENTUM, l2_factor=0):
+    """
+
+    :param model: Network model
+    :param lr: learning rate
+    :param momentum: momentum of previous history to be taken
+    :param l2_factor:
+
+    :return: SGD optimizer instance
+    """
     return optim.SGD(model.parameters(), lr=lr, momentum=momentum, weight_decay=l2_factor)
 
 
 def StepLR_scheduler(optimizer, step_size=STEP_SIZE, gamma=0.1):
+    """
+
+    :param optimizer: model optimizer
+    :param step_size: frequency after which lr is updated
+    :param gamma: factor by which lr is updated.
+
+    :return: sterLR instance
+    """
     return StepLR(optimizer, step_size=step_size, gamma=gamma)
 
 def ReduseLR_onplateau(optimizer, patience = 2, verbose = False):
+    """
+
+    :param optimizer (torch.optim) : Model optimizer
+    :param patience (int): Number of epochs to wait before updating the lr when metrix doesnt update
+    :param verbose (bool): print the log?
+
+    :return: ReduseLR_onplateau instance
+    """
     return ReduceLROnPlateau(optimizer, patience=patience, verbose=verbose)
 
 
