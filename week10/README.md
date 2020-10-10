@@ -1,5 +1,5 @@
-# Session 9 - Advance concepts in training and Learning rates
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dqPeV8WTlyAzFSDPXt5CoAyVO96tfvcj)
+# Session 10 - Advance concepts in training and Learning rates
+[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week10/EVA5_session_10.ipynb)
 
 ## Assignment Objective
 
@@ -11,7 +11,7 @@
 
 Gradcam for visualization of focus of our trained network. and generate a batch gradcam for visulaization of 25 images together.
   
-  
+
 ## Solution:
 
 * Used cutout with size (8,8) transformation.
@@ -24,14 +24,14 @@ Gradcam for visualization of focus of our trained network. and generate a batch 
  * Achived expected validation accuracy
 
 ## Accuracy and Loss
-<img src="week10/images/acc.png" width="450px"> <img src="week10/images/loss.png" width="450px">
+![img1](images/acc.png) ![img2](images/loss.png)
 
 ## LRfinder with range test
-<img src="week10/images/lrfinder.png" width="450px">
+![img3](images/lrfinder.png)
 
 ## Gradcam cam result for layers
-<img src="week10/images/grad_imgs_layer__1.png" width="450px">
-<img src="week10/images/grad_imgs_layer__2.png" width="450px">
+![img4](images/grad_imgs_layer__1.png)
+![img5](images/grad_imgs_layer__2.png)
 
 ## 25 misclassified images
-<img src="week10/images/misclass.png" width="720px">
+![img6](images/misclass.png)
