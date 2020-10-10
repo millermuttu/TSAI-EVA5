@@ -45,4 +45,4 @@
 ![img3](images/lrf.png)
 
 ## Cyclic LR plot
-![img5](images/clr.png)
+![img5](images/download.png)
