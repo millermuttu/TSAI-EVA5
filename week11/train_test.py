@@ -66,3 +66,29 @@ def test(model, dataloader, loss_fn, device, n_misclassified, test_losses, test_
     )
 
     return test_loss
+
+def train_ocp(model, dataloader, optimizer,sheduler,loss_fn, device, train_losses, train_acc):
+    """ traing the model with dataloader and specified optimizer and loss function"""
+    model.train()
+    pbar = tqdm(dataloader, total=len(dataloader))
+    correct = 0
+    processed = 0
+    train_epoch_loss = 0
+    for batch_idx, (data, target) in enumerate(pbar):
+        data, target = data.to(device), target.to(device)
+        optimizer.zero_grad()
+        y_pred = model(data)
+        loss = loss_fn(y_pred, target)
+        loss.backward()
+        optimizer.step()
+        pred = y_pred.argmax(dim=1, keepdims=True)
+        correct += pred.eq(target.view_as(pred)).sum().item()
+        processed += len(data)
+        train_epoch_loss += loss.item()
+        pbar.set_description(
+            desc=f'Loss={loss.item():0.2f} Batch_ID={batch_idx} Accuracy={(100 * correct / processed):.2f}'
+        )
+        sheduler.step()
+
+    train_losses.append(train_epoch_loss / len(dataloader.dataset))
+    train_acc.append(100. * correct / processed)
