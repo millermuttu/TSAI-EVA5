@@ -1,4 +1,4 @@
-# Session 11 - Object localization YOLO
+# Session 12 - Object localization YOLO
 [![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week12/EVA5_session_12.ipynb)
 
 ## Assignment Objective
