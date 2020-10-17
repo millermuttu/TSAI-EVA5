@@ -1,5 +1,5 @@
 # Session 11 - Super Convergence
-[![Open Jupyter Notebook](week11/images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week11/EVA5_session_11.ipynb)
+[![Open Jupyter Notebook](images/nbviewer_badge.png)](https://github.com/millermuttu/TSAI-EVA5/blob/master/week11/EVA5_session_11.ipynb)
 
 ## Assignment Objective
 - Write a code to generate the plot for Cyclic LR representation.
@@ -28,16 +28,21 @@
 
 ## Results
  * Network as described is implemented (DevidNET)
+ * OneCycleLR sheduler is used:
+   - min_lr = 0.1
+   - max_lr = min_lr/5
+   - Stepup till epochs 5 and and stepdown till the end of epochs 24
+   - Epochs = 24
  * Achived expected validation accuracy of **90%**
  * implemented the plot for CLR
  * used Batch size of 512
  * transform used: Padding-->Randomcrop-->flip-->cutout
 
 ## Accuracy and Loss
-![i](week11/images/acc.png) ![i2](week11/images/loss.png)
+![i](images/acc.png) ![i2](images/loss.png)
 
 ## LRfinder with range test
-![img3](week11/images/lrfinder.png)
+![img3](images/lrf.png)
 
 ## Cyclic LR plot
-![img5](week11/images/clr.png)
+![img5](images/download.png)
