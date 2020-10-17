@@ -23,22 +23,22 @@
  * transform used: Randomcrop-->flip-->Rotation
 
 ## Accuracy and Loss
-![i](week12/images/accu.png)
+![i](images/accu.png)
 
 ## Annotation of images for PPE detection.
 * Downloaded abput 64 images each of people wearing hardhat, vest, mask and boots.
 * Images are anootaed with bounding box for classes.
- - hardhat
- - vest
- - mask
- - boot
+  - hardhat
+  - vest
+  - mask
+  - boot
 * tool used for annotation - [VIA](http://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html) 
 ## Kmeans IOU for diffrent k values of clustering
-![i2](week12/images/kmeans_iou.png)
+![i2](images/kmeans_iou.png)
 * For the above plot, k = 4 or k = 8 seems to be the best choice because for after 8, the curve becomes almost linear.
 
 ## Cluster plot for k=4 and k=8
-![i3](week12/images/cluster_plot_k4.png) ![i4](week12/images/cluster_plot_k8.png)
+![i3](images/cluster_plot_k4.png) ![i4](images/cluster_plot_k8.png)
 
 ## Anchor box for k=4 and k=8
-![i5](week12/images/anchor_bbox_k4.png) ![i6](week12/images/anchor_bbox_k8.png)
+![i5](images/anchor_bbox_k4.png) ![i6](images/anchor_bbox_k8.png)
