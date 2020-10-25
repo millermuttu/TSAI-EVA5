@@ -1,11 +1,8 @@
 # Seeion13: YOLO v3/v4
 
 ## Objectives of the session:
-* understandin the implemenattion of YOLO inference using opencv
-* trainiing our own custom data for PPE safety detection.
-
-## Result of YOLO inferenceing using opencv 
-![](https://github.com/millermuttu/TSAI-EVA5/blob/master/week13/yolo_object_detection_opencv/result1.jpg)
+* Understandin the implemenattion of YOLO inference using opencv
+* Trainiing our own custom data for PPE safety detection.
 
 # Training the custom PPE dataset on YOLOv3
 
