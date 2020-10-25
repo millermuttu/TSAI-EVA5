@@ -4,6 +4,8 @@
 * Understandin the implemenattion of YOLO inference using opencv
 * Trainiing our own custom data for PPE safety detection.
 
+## check this youtube link for video sample result [Youtube link](https://youtu.be/Grr8teUPwnk)
+
 # Training the custom PPE dataset on YOLOv3
 
 ## Steps
