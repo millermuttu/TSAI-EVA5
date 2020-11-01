@@ -1,4 +1,4 @@
-# Seeion13: RCNN Family: RCNN, Fast-RCNN, FasterRCNN & MaskRCNN
+# Seeion14: RCNN Family: RCNN, Fast-RCNN, FasterRCNN & MaskRCNN
 
 ## Objectives of the session:
 * Try and understand the MiDaS and planercnn implementation and run them to generate depteh images and planer images for our PPE dataset.
